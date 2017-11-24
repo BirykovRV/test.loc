@@ -1,0 +1,20 @@
+
+.article {
+	background-color: #f2f2f2;
+	border: 1px solid #e6e6e6;
+	margin: 15px auto;
+}
+
+div.col-sm-6 {
+	float: left;
+}
+
+div.col-sm-6 > a{
+	float: right;
+}
+
+.notation {
+	background-color: #e6e6e6;
+	border: 1px solid #cccccc;
+	margin: 10px auto;
+}

@@ -1,0 +1,7 @@
+RewriteEngine On
+Options +FollowSymlinks
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^news/$ index.php [QSA,L]
+RewriteRule ^mobile/([0-9]+)-([a-z0-9\-]+)/?$ 
