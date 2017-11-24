@@ -131,4 +131,15 @@ class ORM
 			//echo "UPDATE $table SET ($query) WHERE article_id = $id";
 		}
 	}
+
+	public function Del($table, $id)
+	{
+		try {
+			$this->STH = $this->DBH->prepare("DELETE FROM $table WHERE (article_id = ?)");
+			$this->STH->execute(array($id));
+			return $row = $this->STH->fetch();
+		} catch (PDOException $e) {
+			return $e->getMessage();
+		}
+	}
 }

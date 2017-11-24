@@ -11,7 +11,7 @@ if (isset($_GET['id']) && !empty($_GET['id']))
 
 	if ($article['article_id'] != $id) 
 	{
-		header('Location: /');
+		header('Location: http://test.loc:8080/news/');
 	}
 }
 require 'header.php'; 
@@ -29,7 +29,7 @@ require 'header.php';
 					<p style="color: green;"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></p>
 				<?php endif ?>
 
-				<form action="add_article.php" method="post">
+				<form action="http://test.loc:8080/add_article.php" method="post">
 					<div class="form-group">
 						<label>Название статьи:</label>
 						<input required type="text" class="form-control" id="email" name="title" value="<?php echo $article['title']; ?>">
@@ -44,6 +44,7 @@ require 'header.php';
 					</div>
 					<?php if (isset($_GET['id']) && !empty($_GET['id'])): ?>
 						<button name="update" type="submit" class="btn btn-primary">Изменить</button>
+						<button name="del" type="submit" class="btn btn-primary">Удалить</button>
 					<?php elseif(!isset($_GET['id'])): ?>
 						<button name="add" type="submit" class="btn btn-primary">Создать</button>
 					<?php endif; ?>

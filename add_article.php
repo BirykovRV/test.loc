@@ -4,7 +4,7 @@ session_start();
 $db->Connect();
 $table = 'articles';
 $data = $_POST;
-
+$id = $_SESSION['id'];
 if (isset($data['add'])) {  
   //если нажата кнопка и поля не пусты
   if (!empty($data['title']) && !empty($data['article']) && !empty($data['notation'])) {
@@ -40,8 +40,7 @@ else if (isset($data['update']))
     $title = htmlspecialchars($data['title']);
     $notation = htmlspecialchars($data['notation']);
     $article = htmlspecialchars($data['article']);
-    $date = date("Y-m-d H:i:s");
-    $id = $_SESSION['id'];
+    $date = date("Y-m-d H:i:s");    
 
     $query = "UPDATE $table SET title = '$title', notation = '$notation', article = '$article', created = '$date' WHERE article_id = '$id'";
     
@@ -61,7 +60,20 @@ else if (isset($data['update']))
     header('Location:http://'.$host.':8080/create/');
   }
 }
-else 
+else if (isset($data['del'])) 
 {
-  header('Location: /');
+  $article = $db->Del($table, $id);
+
+  if ($article) {
+    $_SESSION['message'] = 'Статья успешно удалена!';
+    header('Location: http://'.$host.':8080/create/');
+  }
+  else {
+    header('Location: http://'.$host.':8080/create/');
+    $_SESSION['err_message'] = 'Ошибка удаления статьи!';
+  }
+}
+else
+{
+  header('Location: http://test.loc:8080/news/');
 }
