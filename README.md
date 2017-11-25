@@ -10,4 +10,10 @@
 
 SQL для таблицы: 
 
-		CREATE TABLE `test`. ( `article_id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(500) NOT NULL , `notation` TEXT NOT NULL , `article` TEXT NOT NULL , `created` DATETIME NOT NULL , PRIMARY KEY (`article_id`)) ENGINE = InnoDB;
+		CREATE TABLE `test`. ( 
+			`article_id` INT NOT NULL AUTO_INCREMENT , 
+			`title` VARCHAR(500) NOT NULL , 
+			`notation` TEXT NOT NULL , 
+			`article` TEXT NOT NULL , 
+			`created` DATETIME NOT NULL , 
+			PRIMARY KEY (`article_id`)) ENGINE = InnoDB;
