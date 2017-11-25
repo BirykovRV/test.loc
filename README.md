@@ -6,6 +6,7 @@
     rewrite ^/news/(.*)$ /index.php break;
     rewrite ^/create/(.*)$ /create_article.php break;     
     rewrite ^/create/([0-9]+)-([a-z0-9\-]+)?$ /create_article.php?id=$1 break;
+    #этот редирект не работает, пока не разобрался в причине
     rewrite ^/([0-9]+)-([a-z0-9\-]+)/?$ /full_article.php?id=$1 break;
 
 SQL для таблицы: 
