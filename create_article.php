@@ -11,7 +11,7 @@ if (isset($_GET['id']) && !empty($_GET['id']))
 
 	if ($article['article_id'] != $id) 
 	{
-		header('Location: http://test.loc:8080/news/');
+		header('Location: http://test.loc:8080/news/create/');
 	}
 }
 require 'header.php'; 
@@ -45,7 +45,7 @@ require 'header.php';
 					<?php if (isset($_GET['id']) && !empty($_GET['id'])): ?>
 						<button name="update" type="submit" class="btn btn-primary">Изменить</button>
 						<button name="del" type="submit" class="btn btn-primary">Удалить</button>
-					<?php elseif(!isset($_GET['id'])): ?>
+					<?php elseif(!isset($_GET['id']) || ($_GET['id'] == 0)): ?>
 						<button name="add" type="submit" class="btn btn-primary">Создать</button>
 					<?php endif; ?>
 					<p></p>

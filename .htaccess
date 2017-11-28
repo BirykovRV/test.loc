@@ -4,6 +4,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 RewriteRule ^news/$ index.php [QSA,L]
-RewriteRule ^create/(.*)$ create_article.php [QSA,L]    
-RewriteRule ^create/([0-9]+)-([a-z0-9\-]+)?$ create_article.php?id=$1 [QSA,L]
+RewriteRule ^create/(.*)$ create_article.php [QSA,L]
+RewriteRule ^edit/([0-9]+)-([a-z0-9\-]+)?$ create_article.php?id=$1 [QSA,L]
 RewriteRule ^news/([0-9]+)-([a-z0-9\-]+)?$ full_article.php?id=$1 [L]

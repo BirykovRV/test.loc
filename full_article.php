@@ -33,12 +33,12 @@ require 'header.php';
 				</div>
 				<p><?php echo $article['article']; ?></p>
 				<div class="col-sm-6"><h6><?php echo $article['created']; ?></h6></div>
-				<div class="col-sm-6"><a href="http://test.loc:8080/create_article.php?id=<?php echo translit($article['article_id']); ?>">Редактировать</a></div>
+				<div class="col-sm-6"><a href="http://test.loc:8080/edit/<?php echo $article['article_id']; ?>-<?php echo translit($article['title']); ?>">Редактировать</a></div>
 			</div>
 			<div class="col-md-2"></div>
 
 		</div>
 	</div>
 </div>
--<?php echo translit($value['title']); ?>/
+<?php echo translit($value['title']); ?>
 <?php require 'footer.php'; ?>
