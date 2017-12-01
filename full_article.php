@@ -29,9 +29,9 @@ require 'header.php';
 			<div id="bg" class="col-md-8 article">
 				<h2><?php echo $article['title']; ?></h2>
 				<div class="notation">
-					<?php echo $article['notation']; ?>
+					<?php echo preg_replace("/\r/u", "<br>", $article['notation']); ?>
 				</div>
-				<p><?php echo $article['article']; ?></p>
+				<p><?php echo preg_replace("/\r/u", "<br>", $article['article']); ?></p>
 				<div class="col-sm-6"><h6><?php echo $article['created']; ?></h6></div>
 				<div class="col-sm-6"><a href="http://test.loc:8080/edit/<?php echo $article['article_id']; ?>-<?php echo translit($article['title']); ?>">Редактировать</a></div>
 			</div>
